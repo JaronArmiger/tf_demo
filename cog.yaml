@@ -1,0 +1,41 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  # set to true if your model requires a GPU
+  gpu: true
+
+  # a list of ubuntu apt packages to install
+  system_packages:
+    - "build-essential"
+    - "libglib2.0-0"
+    - "libsm6"
+    - "libxext6"
+    - "libxrender-dev"
+    - "wget"
+    - "cmake"
+    - "ffmpeg"
+    # - "libgl1-mesa-glx"
+  #   - "libglib2.0-0"
+
+  # python version in the form '3.11' or '3.11.4'
+  python_version: "3.11"
+
+  # a list of packages in the format <package-name>==<version>
+  python_packages:
+    - "numpy"
+    # - "tensorflow==2.10.0"
+    - "tensorflow[and-cuda]"
+    - "opencv-python-headless"
+  #   - "torch==1.8.0"
+  #   - "torchvision==0.9.0"
+
+  # commands run after the environment is setup
+  run:
+    - "pip cache purge"
+    - "pip install --upgrade pip"
+    - "pip show tensorflow"
+  #   - "echo another command if needed"
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"

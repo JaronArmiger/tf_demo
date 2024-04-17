@@ -1,0 +1,14 @@
+cog login
+cog push r8.im/alloccasions/position-analyser-multi
+
+# single image
+# video-1
+cog predict -i image="https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-1/frame_0001.jpg" -i mode="landscape"
+# video-2
+cog predict -i image="https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-2/frame_0001.jpg"
+
+# multiple images
+# video-1
+cog predict -i images="https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-1/frame_0001.jpg, https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-1/frame_0011.jpg, https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-1/frame_0021.jpg" -i mode="landscape"
+# video-2
+cog predict -i images="https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-2/frame_0001.jpg, https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-2/frame_0015.jpg, https://alloccasions.s3.eu-west-3.amazonaws.com/inspects/054fb98d-5b43-4a49-a77d-c8db9afce864/video-2/frame_0021.jpg"
